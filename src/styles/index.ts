@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from "styled-components";
+import Background from "../assets/background.png";
 
 export const GlobalStyle = createGlobalStyle`
     :root{
@@ -16,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         width: 100vw;
         height: 100vh;
+        background-image: url(${Background});
+
     }
 
     h1{
@@ -26,6 +29,10 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 120%;
     }
     #root{
+        height: 100%;
+        width: 100%;
+        
+        
     }
 
 `;
@@ -33,4 +40,5 @@ export const GlobalStyle = createGlobalStyle`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
