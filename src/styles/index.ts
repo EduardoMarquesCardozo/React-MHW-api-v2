@@ -17,13 +17,34 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         width: 100vw;
         height: 100vh;
-        background-image: url(${Background});
+        background: url(${Background}) no-repeat top center;
 
+    }
+
+    .flex{
+        display: flex;
+    }
+    .column{
+        flex-direction: column;
     }
 
     h1{
         margin: 0;
         font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+    }
+    h3{
+        margin: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+    }
+    h5{
+        margin: 0;
+        font-size: 10px;
         font-style: normal;
         font-weight: 700;
         line-height: 120%;
