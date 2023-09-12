@@ -8,7 +8,7 @@ import {
   Parts,
   Pagination,
 } from "./styles";
-import Placeholder from "../../../assets/armor_icons/icon_armor_placeholder.svg";
+import Placeholder from "../../../assets/armor_icons/armor_placeholder.svg";
 
 const ArmorSetList = () => {
   const list = [1, 2, 3, 4, 5, 6, 7, 8];

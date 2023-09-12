@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         width: 100vw;
         height: 100vh;
         background: url(${Background}) no-repeat top center;
-
+        
     }
 
     .flex{

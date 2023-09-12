@@ -10,17 +10,19 @@ export const Wrapper = styled.div`
 
 export const LBox = styled.div`
   display: flex;
+  flex: 4;
   width: 400px;
 `;
 
 export const MBox = styled.div`
   display: flex;
-  height: 607px;
-  width: 400px;
+  flex: 5;
+  width: 512px;
 `;
 
 export const RBox = styled.div`
   display: flex;
+  flex: 3;
   height: 607px;
   width: 400px;
 `;
