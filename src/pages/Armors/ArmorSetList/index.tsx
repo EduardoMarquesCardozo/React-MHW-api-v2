@@ -9,6 +9,7 @@ import {
   Pagination,
 } from "./styles";
 import Placeholder from "../../../assets/armor_icons/armor_placeholder.svg";
+import { HighlightTitle } from "../styles";
 
 const ArmorSetList = () => {
   const list = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -27,8 +28,8 @@ const ArmorSetList = () => {
       </div>
       <SetsGroup>
         <Title>
-          <p>sets</p>
-          <p>parts</p>
+          <HighlightTitle className="leftTitle">SETS</HighlightTitle>
+          <HighlightTitle>PARTS</HighlightTitle>
         </Title>
         <Table>
           {list.map((value) => (

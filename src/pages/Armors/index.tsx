@@ -1,4 +1,5 @@
 import ArmorInfo from "./ArmorInfo";
+import ArmorMaterial from "./ArmorMaterial";
 import ArmorSetList from "./ArmorSetList";
 import { LBox, MBox, RBox, Wrapper } from "./styles";
 
@@ -11,7 +12,9 @@ const Armors = () => {
       <MBox>
         <ArmorInfo />
       </MBox>
-      <RBox />
+      <RBox>
+        <ArmorMaterial />
+      </RBox>
     </Wrapper>
   );
 };

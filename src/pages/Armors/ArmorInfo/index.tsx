@@ -20,6 +20,7 @@ import {
 
 import Defense from "../../../assets/defense_icons/defense.svg";
 import { Small } from "../../../assets/decoration_icons";
+import { HighlightTitle } from "../styles";
 
 const ArmorInfo = () => {
   const ailments = ["Vs Fire", "Vs Water", "Vs Thunder", "Vs Ice", "Vs Dragon"];
@@ -32,7 +33,7 @@ const ArmorInfo = () => {
       <Content>
         <InfoColumn>
           <Info>
-            <h5>INFO</h5>
+            <HighlightTitle className="leftTitle">INFO</HighlightTitle>
             <Row>
               <div>
                 <img src={Defense} alt="" />
@@ -51,7 +52,7 @@ const ArmorInfo = () => {
             ))}
           </Info>
           <Decoration>
-            <h5>DECORATIONS</h5>
+            <HighlightTitle className="leftTitle">DECORATIONS</HighlightTitle>
             <article>
               {decoration.map((size) => (
                 <div key={size}>
@@ -64,7 +65,7 @@ const ArmorInfo = () => {
         </InfoColumn>
         <SkillsColumn>
           <Skills>
-            <h5>SKILLS</h5>
+            <HighlightTitle>SKILLS</HighlightTitle>
             <section>
               <article>
                 <STitle>
@@ -93,7 +94,7 @@ const ArmorInfo = () => {
             </section>
           </Skills>
           <SetBonusSkills>
-            <h5>SET BONUS SKILLS</h5>
+            <HighlightTitle>SET BONUS SKILLS</HighlightTitle>
             <section>
               <article>
                 <SetBonusTitle>

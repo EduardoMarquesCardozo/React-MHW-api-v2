@@ -39,21 +39,8 @@ export const Title = styled.div`
   text-align: center;
   width: 100%;
   margin-top: 16px;
-  p {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
+  h5 {
     flex: 2;
-    margin: 0;
-    padding: 6px 16px;
-
-    background: linear-gradient(
-      270deg,
-      rgb(0, 0, 0, 0) 0%,
-      rgb(172, 172, 172, 15%) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
-
     &:first-child {
       flex: 1;
       text-align: initial;

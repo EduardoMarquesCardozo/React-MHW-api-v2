@@ -16,12 +16,6 @@ export const Content = styled.div`
   flex-direction: row;
   h5 {
     padding: 6px 16px;
-    background: linear-gradient(
-      270deg,
-      rgb(0, 0, 0, 0) 0%,
-      rgb(172, 172, 172, 15%) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
   }
   p {
     margin: 0;
@@ -90,6 +84,10 @@ export const SkillsColumn = styled.section`
   display: flex;
   flex-direction: column;
   flex: 4;
+  h5 {
+    justify-content: center;
+    display: flex;
+  }
   section {
     display: flex;
     flex-direction: column;
