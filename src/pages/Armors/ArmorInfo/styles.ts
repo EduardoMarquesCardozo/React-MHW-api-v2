@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
   flex-direction: column;
   border-radius: 16px;
   background-color: var(--bg-opaque);
@@ -14,7 +13,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
   flex-direction: row;
   h5 {
     padding: 6px 16px;
@@ -31,7 +29,6 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.div`
-  display: flex;
   justify-content: center;
   padding: 16px 0;
 `;
@@ -43,18 +40,15 @@ export const InfoColumn = styled.section`
 `;
 
 export const Info = styled.div`
-  display: flex;
   flex-direction: column;
   margin-bottom: 36px;
   gap: 24px;
 `;
 
 export const Row = styled.div`
-  display: flex;
   padding: 0 16px;
   justify-content: space-between;
   div {
-    display: flex;
     gap: 8px;
     align-items: center;
     img {
@@ -73,7 +67,6 @@ export const Row = styled.div`
 `;
 
 export const Decoration = styled.div`
-  display: flex;
   flex-direction: column;
   article {
     display: flex;
@@ -81,7 +74,6 @@ export const Decoration = styled.div`
     padding: 16px;
     gap: 24px;
     div {
-      display: flex;
       align-items: baseline;
       img {
         width: 24px;
@@ -109,15 +101,11 @@ export const SkillsColumn = styled.section`
       border-radius: 8px;
       border: 1px solid var(--border);
       background: var(--bg-opaque);
-      div {
-        display: flex;
-      }
     }
   }
 `;
 
 export const Skills = styled.div`
-  display: flex;
   flex-direction: column;
   section {
     border-left: 2px solid var(--border);
@@ -141,7 +129,6 @@ export const STitle = styled.div`
   }
 `;
 export const SContent = styled.div`
-  display: flex;
   gap: 4px;
 `;
 
@@ -162,7 +149,6 @@ export const EmptyCheck = styled.div`
 `;
 
 export const SetBonusSkills = styled.div`
-  display: flex;
   flex-direction: column;
   border-left: 2px solid var(--border);
   article {
@@ -173,7 +159,6 @@ export const SetBonusSkills = styled.div`
 `;
 
 export const SetBonusContent = styled.div`
-  display: flex;
   gap: 4px;
   font-size: 12px;
   p {

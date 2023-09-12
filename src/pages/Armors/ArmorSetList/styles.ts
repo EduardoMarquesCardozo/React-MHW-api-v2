@@ -1,13 +1,11 @@
 import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
 export const Tab = styled.div`
-  display: flex;
   padding: 12px 0;
   justify-content: center;
   width: 115px;
@@ -30,7 +28,6 @@ export const Tab = styled.div`
   }
 `;
 export const SetsGroup = styled.div`
-  display: flex;
   flex-direction: column;
   border-radius: 0px 16px 16px 16px;
   width: 100%;
@@ -39,7 +36,6 @@ export const SetsGroup = styled.div`
   border: 1px solid var(--border);
 `;
 export const Title = styled.div`
-  display: flex;
   text-align: center;
   width: 100%;
   margin-top: 16px;
@@ -65,18 +61,13 @@ export const Title = styled.div`
   }
 `;
 export const Table = styled.div`
-  display: flex;
   margin: 16px 16px 0px 16px;
   padding-bottom: 16px;
   flex-direction: column;
   border-bottom: 1px solid var(--border);
   gap: 24px;
-  div {
-    display: flex;
-  }
 `;
 export const Name = styled.div`
-  display: flex;
   flex-direction: column;
   flex: 1;
   span {
@@ -86,13 +77,11 @@ export const Name = styled.div`
   }
 `;
 export const Parts = styled.div`
-  display: flex;
   flex: 2;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   div {
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 33px;
@@ -108,13 +97,11 @@ export const Parts = styled.div`
   }
 `;
 export const Pagination = styled.div`
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   margin: 16px 0;
   div {
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 33px;

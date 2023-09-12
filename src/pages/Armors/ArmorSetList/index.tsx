@@ -15,7 +15,7 @@ const ArmorSetList = () => {
 
   return (
     <Wrapper>
-      <div className="flex">
+      <div>
         <Tab className="low-rank">Low Rank</Tab>
         <Tab>High Rank</Tab>
         <Tab>Master Rank</Tab>

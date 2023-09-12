@@ -18,12 +18,11 @@ export const GlobalStyle = createGlobalStyle`
         width: 100vw;
         height: 100vh;
         background: url(${Background}) no-repeat top center;
-        
+        div{
+            display: flex;
+        }
     }
 
-    .flex{
-        display: flex;
-    }
     .column{
         flex-direction: column;
     }
@@ -59,7 +58,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
+  width: 100%;
   flex-direction: column;
   height: 100%;
 `;
