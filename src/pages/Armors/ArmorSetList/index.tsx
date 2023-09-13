@@ -8,23 +8,61 @@ import {
   Parts,
   Pagination,
 } from "./styles";
-import Placeholder from "../../../assets/armor_icons/armor_placeholder.svg";
 import { HighlightTitle } from "../styles";
+import useArmorSetData from "../../../hooks/useArmorSetData/index";
+import { useEffect, useState } from "react";
+import {
+  Armguard,
+  Chestplate,
+  Helmet,
+  Leggings,
+  Placeholder,
+  Waist,
+} from "../../../assets/armor_icons";
 
 const ArmorSetList = () => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8];
+  const [rank, setRank] = useState<"low" | "high" | "master">("low");
+  const changeRank = (rankData: "low" | "high" | "master") => {
+    if (rank == rankData) return;
+
+    setRank(rankData);
+    List(rankData);
+  };
+
+  const { List, armorSetPage, ChangeArmorPiece, selectedArmor } =
+    useArmorSetData();
+
+  useEffect(() => {
+    List("low");
+  }, [List]);
 
   return (
     <Wrapper>
       <div>
-        <Tab className="low-rank">Low Rank</Tab>
-        <Tab>High Rank</Tab>
-        <Tab>Master Rank</Tab>
-        {/* 
-        <Tab className="low-rank">Low Rank</Tab>
-        <Tab className="high-rank">High Rank</Tab>
-        <Tab className="master-rank">Master Rank</Tab> 
-        */}
+        <Tab
+          className={`${rank == "low" && `low-rank`}`}
+          onClick={() => {
+            changeRank("low");
+          }}
+        >
+          Low Rank
+        </Tab>
+        <Tab
+          className={`${rank == "high" && `high-rank`}`}
+          onClick={() => {
+            changeRank("high");
+          }}
+        >
+          High Rank
+        </Tab>
+        <Tab
+          className={`${rank == "master" && `master-rank`}`}
+          onClick={() => {
+            changeRank("master");
+          }}
+        >
+          Master Rank
+        </Tab>
       </div>
       <SetsGroup>
         <Title>
@@ -32,31 +70,46 @@ const ArmorSetList = () => {
           <HighlightTitle>PARTS</HighlightTitle>
         </Title>
         <Table>
-          {list.map((value) => (
-            <div key={value}>
-              <Name>
-                <h3>Pukei</h3>
-                <span>Rarity 3</span>
-              </Name>
-              <Parts>
-                <div>
-                  <img src={Placeholder} alt="" />
-                </div>
-                <div>
-                  <img src={Placeholder} alt="" />
-                </div>
-                <div>
-                  <img src={Placeholder} alt="" />
-                </div>
-                <div>
-                  <img src={Placeholder} alt="" />
-                </div>
-                <div>
-                  <img src={Placeholder} alt="" />
-                </div>
-              </Parts>
-            </div>
-          ))}
+          {armorSetPage.length > 0 &&
+            armorSetPage?.map((Armor) => (
+              <div key={Armor.id + "-armor"}>
+                <Name>
+                  <h3>{Armor.name}</h3>
+                  <span>
+                    {Armor.pieces[0]?.rarity &&
+                      "Rarity " + Armor.pieces[0]?.rarity}
+                  </span>
+                </Name>
+                <Parts>
+                  {Armor.pieces.map((piece) => (
+                    <div
+                      key={piece.id + "-piece"}
+                      className={`${piece == selectedArmor && `selected`}`}
+                      onClick={() => {
+                        ChangeArmorPiece(piece, Armor.bonus);
+                      }}
+                    >
+                      <img
+                        src={
+                          piece.type == "head"
+                            ? Helmet
+                            : piece.type == "chest"
+                            ? Chestplate
+                            : piece.type == "gloves"
+                            ? Armguard
+                            : piece.type == "waist"
+                            ? Waist
+                            : piece.type == "legs"
+                            ? Leggings
+                            : Placeholder
+                        }
+                        alt={piece.type}
+                      />
+                    </div>
+                  ))}
+                </Parts>
+              </div>
+            ))}
         </Table>
         <Pagination>
           <div>1</div>

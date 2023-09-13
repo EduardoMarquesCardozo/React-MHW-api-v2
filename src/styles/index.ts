@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         --secondary-highlight: #b59a27;
         --border: #4C4948;
         --bg-opaque: rgba(26, 22, 21, 0.50);
+        --selected: #c0dd1c;
     }
 
     body{

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Tab = styled.div`
+  cursor: pointer;
   padding: 12px 0;
   justify-content: center;
   width: 115px;
@@ -71,6 +72,7 @@ export const Parts = styled.div`
   div {
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     width: 33px;
     height: 33px;
     flex-shrink: 0;
@@ -81,6 +83,9 @@ export const Parts = styled.div`
       width: 24px;
       height: 24px;
     }
+  }
+  .selected {
+    border: 1px solid var(--selected);
   }
 `;
 export const Pagination = styled.div`

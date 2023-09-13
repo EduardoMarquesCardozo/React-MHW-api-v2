@@ -135,7 +135,7 @@ export const FilledCheck = styled.div`
   height: 12px;
   border-radius: 2px;
   border: 1px solid #4c4948;
-  background: #c0dd1c;
+  background: var(--selected);
 `;
 
 export const EmptyCheck = styled.div`
