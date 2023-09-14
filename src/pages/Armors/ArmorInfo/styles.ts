@@ -72,6 +72,7 @@ export const Decoration = styled.div`
       img {
         width: 24px;
         height: 24px;
+        margin-right: 8px;
       }
       p {
         font-size: 12px;

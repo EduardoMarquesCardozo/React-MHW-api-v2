@@ -72,10 +72,10 @@ const ArmorInfo = () => {
                   />
                   <p>
                     {decoration.rank == 1
-                      ? "Small"
+                      ? " Small "
                       : decoration.rank == 2
-                      ? "Medium"
-                      : "Large"}
+                      ? " Medium "
+                      : " Large "}
                     decoration
                   </p>
                 </div>

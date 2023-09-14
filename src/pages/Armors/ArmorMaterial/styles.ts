@@ -8,10 +8,8 @@ export const Wrapper = styled.div`
   border: 1px solid var(--border);
   align-items: center;
   padding: 24px 0;
-  .img {
-    background-color: #fff;
-    width: 240px;
-    height: 240px;
+  img {
+    width: 160px;
     margin-bottom: 24px;
   }
 `;
