@@ -13,9 +13,13 @@ export interface ArmorPiece {
   defense: Defense;
   resistances: Resistances;
   name: string;
-  slots: any[];
+  slots: Slots[];
   skills: Skill[];
   armorSet: number;
   assets: Assets;
   crafting: Crafting;
+}
+
+export interface Slots {
+  rank: number;
 }

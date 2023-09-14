@@ -1,4 +1,4 @@
-import usePaginationData from "../../hooks/pagination";
+import usePaginationData from "../../hooks/usePaginationData";
 import { ChevronLeft, ChevronRight } from "../../assets/feather_icons";
 import { Page, Wrapper } from "./styles";
 

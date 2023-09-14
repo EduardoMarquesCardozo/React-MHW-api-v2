@@ -4,6 +4,7 @@ import { ArmorSet } from "../../models/ArmorSet";
 import { Bonus } from "../../models/Bonus";
 import { ArmorSetService } from "../../services/ArmorSet";
 import { pageSize } from "../../utils/constants";
+import useSkillData from "../../hooks/useSkillData";
 
 interface ArmorSetProviderProps {
   children: React.ReactNode;
@@ -14,7 +15,6 @@ export interface ArmorSetContextData {
   selectedArmor?: ArmorPiece;
   selectedBonus?: Bonus;
   allArmorSets: ArmorSet[];
-  isLoading: boolean;
   List: (rank?: string) => Promise<void>;
   ListPaginated: (pageToGo: number) => void;
   ChangeArmorPiece: (armor: ArmorPiece, bonus: Bonus) => void;
@@ -23,7 +23,7 @@ export interface ArmorSetContextData {
 const ArmorSetContext = createContext({} as ArmorSetContextData);
 
 export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { getSkill, setIsLoading } = useSkillData();
 
   const [armorSetPage, setArmorSetPage] = useState<ArmorSet[]>([]);
 
@@ -51,6 +51,9 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
   };
 
   const ChangeArmorPiece = (armor: ArmorPiece, bonus: Bonus) => {
+    armor.skills.forEach((element) => {
+      getSkill(element.skill);
+    });
     setSelectedArmor(armor);
     setSelectedBonus(bonus);
   };
@@ -65,7 +68,6 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
         allArmorSets,
         selectedArmor,
         selectedBonus,
-        isLoading,
       }}
     >
       {children}

@@ -9,26 +9,30 @@ import {
   SetBonusSkills,
   Decoration,
   Content,
-  FilledCheck,
-  EmptyCheck,
   STitle,
-  SContent,
   SetBonusContent,
   Icon,
   SetBonusTitle,
 } from "./styles";
 
 import Defense from "../../../assets/defense_icons/defense.svg";
-import { Small } from "../../../assets/decoration_icons";
+import { Large, Medium, Small } from "../../../assets/decoration_icons";
 import { HighlightTitle } from "../styles";
+import useArmorSetData from "../../../hooks/useArmorSetData";
+import NoData from "../../../components/NoData";
+import { ailmentType, ailmentValue, skillChecks } from "./functions";
+import useSkillData from "../../../hooks/useSkillData";
 
 const ArmorInfo = () => {
   const ailments = ["Vs Fire", "Vs Water", "Vs Thunder", "Vs Ice", "Vs Dragon"];
-  const decoration = ["Small", "Medium", "Large"];
+
+  const { selectedArmor, selectedBonus } = useArmorSetData();
+  const { skillList } = useSkillData();
+
   return (
     <Wrapper>
       <Title>
-        <h1>Anja Coil</h1>
+        <h1>{selectedArmor?.name}</h1>
       </Title>
       <Content>
         <InfoColumn>
@@ -36,86 +40,94 @@ const ArmorInfo = () => {
             <HighlightTitle className="leftTitle">INFO</HighlightTitle>
             <Row>
               <div>
-                <img src={Defense} alt="" />
+                <img src={Defense} alt="Base Defense value" />
                 <p>Defense</p>
               </div>
-              <p>20</p>
+              <p>{selectedArmor?.defense.base}</p>
             </Row>
             {ailments.map((type) => (
-              <Row key={type}>
+              <Row key={type + "-ailment"}>
                 <div>
-                  <img src={Defense} alt="" />
+                  {ailmentType(type)}
                   <p>{type}</p>
                 </div>
-                <p>2</p>
+                <p>{ailmentValue(type, selectedArmor?.resistances)}</p>
               </Row>
             ))}
           </Info>
           <Decoration>
             <HighlightTitle className="leftTitle">DECORATIONS</HighlightTitle>
-            <article>
-              {decoration.map((size) => (
-                <div key={size}>
-                  <img src={Small} alt={size} />
-                  <p>x {size} decoration</p>
+            {selectedArmor?.slots.map((decoration) => (
+              <article>
+                <div key={decoration.rank}>
+                  <img
+                    src={
+                      decoration.rank == 1
+                        ? Small
+                        : decoration.rank == 2
+                        ? Medium
+                        : Large
+                    }
+                    alt="Decoration size"
+                  />
+                  <p>
+                    {decoration.rank == 1
+                      ? "Small"
+                      : decoration.rank == 2
+                      ? "Medium"
+                      : "Large"}
+                    decoration
+                  </p>
                 </div>
-              ))}
-            </article>
+              </article>
+            ))}
+            {selectedArmor?.slots.length == 0 && (
+              <NoData
+                padding="16px"
+                message="This armor piece doesn't have decoration slots"
+              />
+            )}
           </Decoration>
         </InfoColumn>
         <SkillsColumn>
           <Skills>
             <HighlightTitle>SKILLS</HighlightTitle>
             <section>
-              <article>
-                <STitle>
-                  <p>Fire resistance</p>
-                  <span>Level 1</span>
-                </STitle>
-                <SContent>
-                  <FilledCheck />
-                  <EmptyCheck />
-                  <EmptyCheck />
-                </SContent>
-              </article>
-              <article>
-                <STitle>
-                  <p>Thunder resistance</p>
-                  <span>Level 1</span>
-                </STitle>
-                <SContent>
-                  <FilledCheck />
-                  <FilledCheck />
-                  <FilledCheck />
-                  <EmptyCheck />
-                  <EmptyCheck />
-                </SContent>
-              </article>
+              {selectedArmor?.skills.map((skill) => (
+                <article key={skill.id + "-skill"}>
+                  <STitle>
+                    <p>{skill.skillName}</p>
+                    <span>Level {skill.level}</span>
+                  </STitle>
+                  {skillChecks(
+                    skillList.find((skillArr) => skillArr.id == skill.skill),
+                    skill.level
+                  )}
+                </article>
+              ))}
+              {selectedArmor?.skills.length == 0 && (
+                <NoData message="This armor piece doesn't have skills" />
+              )}
             </section>
           </Skills>
           <SetBonusSkills>
             <HighlightTitle>SET BONUS SKILLS</HighlightTitle>
             <section>
-              <article>
-                <SetBonusTitle>
-                  <p>Anjanath Power</p>
-                </SetBonusTitle>
-                <SetBonusContent>
-                  <p>3</p>
-                  <Icon>►</Icon>
-                  <span>Adrenaline</span>
-                </SetBonusContent>
-              </article>
-              <article>
-                <SetBonusTitle>
-                  <p>Anjanath Power</p>
-                </SetBonusTitle>
-                <SetBonusContent>
-                  <p>3</p>
-                  <Icon>►</Icon>
-                  <span>Adrenaline</span>
-                </SetBonusContent>
-              </article>
+              {selectedBonus?.ranks.map(() => (
+                <article>
+                  <SetBonusTitle>
+                    <p>Anjanath Power</p>
+                  </SetBonusTitle>
+                  <SetBonusContent>
+                    <p>3</p>
+                    <Icon>►</Icon>
+                    <span>Adrenaline</span>
+                  </SetBonusContent>
+                </article>
+              ))}
+              {!selectedBonus && (
+                <NoData message="This armor set doesn't have bonus skills" />
+              )}
             </section>
           </SetBonusSkills>
         </SkillsColumn>

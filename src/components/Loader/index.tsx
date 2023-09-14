@@ -1,7 +1,7 @@
-import useArmorSetData from "../../hooks/useArmorSetData";
+import useSkillData from "../../hooks/useSkillData";
 import { Wrapper } from "./styles";
 const Loader = () => {
-  const { isLoading } = useArmorSetData();
+  const { isLoading } = useSkillData();
   return (
     <>
       {isLoading && (
