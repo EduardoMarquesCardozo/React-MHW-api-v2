@@ -13,6 +13,7 @@ export interface ArmorSetContextData {
   armorSetPage: ArmorSet[];
   selectedArmor?: ArmorPiece;
   selectedBonus?: Bonus;
+  allArmorSets: ArmorSet[];
   isLoading: boolean;
   List: (rank?: string) => Promise<void>;
   ListPaginated: (pageToGo: number) => void;
@@ -26,7 +27,7 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
 
   const [armorSetPage, setArmorSetPage] = useState<ArmorSet[]>([]);
 
-  const [allArmorSet, setAllArmorSet] = useState<ArmorSet[]>([]);
+  const [allArmorSets, setAllArmorSets] = useState<ArmorSet[]>([]);
 
   const [selectedArmor, setSelectedArmor] = useState<ArmorPiece>();
   const [selectedBonus, setSelectedBonus] = useState<Bonus>();
@@ -36,7 +37,7 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
     await new ArmorSetService()
       .listArmorSets(rank)
       .then((listArmor: ArmorSet[]) => {
-        setAllArmorSet(listArmor);
+        setAllArmorSets(listArmor);
         setArmorSetPage(listArmor.slice(0, pageSize));
         ChangeArmorPiece(listArmor[0].pieces[0], listArmor[0].bonus);
       })
@@ -45,7 +46,7 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
 
   const ListPaginated = (pageToGo: number) => {
     setArmorSetPage(
-      allArmorSet.slice(pageToGo * pageSize - pageSize, pageToGo * pageSize)
+      allArmorSets.slice(pageToGo * pageSize - pageSize, pageToGo * pageSize)
     );
   };
 
@@ -61,6 +62,7 @@ export const ArmorSetProvider = ({ children }: ArmorSetProviderProps) => {
         ListPaginated,
         ChangeArmorPiece,
         armorSetPage,
+        allArmorSets,
         selectedArmor,
         selectedBonus,
         isLoading,

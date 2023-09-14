@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.4);
   .spinner {
-    border: 5px solid rgba(0, 0, 0, 0.3);
-    border-top: 5px solid #000;
+    border: 5px solid rgba(192, 221, 28, 0.3);
+    border-top: 5px solid rgba(192, 221, 28, 0.9);
     border-radius: 50%;
     width: 64px;
     height: 64px;

@@ -1,13 +1,4 @@
-import {
-  Wrapper,
-  Tab,
-  SetsGroup,
-  Title,
-  Table,
-  Name,
-  Parts,
-  Pagination,
-} from "./styles";
+import { Wrapper, Tab, SetsGroup, Title, Table, Name, Parts } from "./styles";
 import { HighlightTitle } from "../styles";
 import useArmorSetData from "../../../hooks/useArmorSetData/index";
 import { useEffect, useState } from "react";
@@ -19,6 +10,7 @@ import {
   Placeholder,
   Waist,
 } from "../../../assets/armor_icons";
+import Pagination from "../../../components/Pagination";
 
 const ArmorSetList = () => {
   const [rank, setRank] = useState<"low" | "high" | "master">("low");
@@ -111,11 +103,7 @@ const ArmorSetList = () => {
               </div>
             ))}
         </Table>
-        <Pagination>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </Pagination>
+        <Pagination />
       </SetsGroup>
     </Wrapper>
   );

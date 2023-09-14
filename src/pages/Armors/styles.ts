@@ -8,7 +8,7 @@ export const HighlightTitle = styled.h5`
   background: linear-gradient(
     270deg,
     rgb(0, 0, 0, 0) 0%,
-    rgb(172, 172, 172, 50%) 50%,
+    rgb(172, 172, 172, 10%) 50%,
     rgba(0, 0, 0, 0) 100%
   );
 `;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   padding: 0 16px;
   gap: 16px;
   .leftTitle {
-    background: linear-gradient(90deg, #4c4d47 0%, rgba(76, 77, 71, 0) 100%);
+    background: linear-gradient(90deg, #4c4d4759 0%, rgba(76, 77, 71, 0) 100%);
   }
 `;
 

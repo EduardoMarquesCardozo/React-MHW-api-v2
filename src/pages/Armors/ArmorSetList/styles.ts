@@ -50,6 +50,7 @@ export const Title = styled.div`
 `;
 export const Table = styled.div`
   margin: 16px 16px 0px 16px;
+  min-height: 429px;
   padding-bottom: 16px;
   flex-direction: column;
   border-bottom: 1px solid var(--border);
@@ -86,21 +87,5 @@ export const Parts = styled.div`
   }
   .selected {
     border: 1px solid var(--selected);
-  }
-`;
-export const Pagination = styled.div`
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 16px 0;
-  div {
-    align-items: center;
-    justify-content: center;
-    width: 33px;
-    height: 33px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--bg-opaque);
   }
 `;
