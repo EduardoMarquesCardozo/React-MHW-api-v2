@@ -1,6 +1,6 @@
 import NoData from "../../../components/NoData";
 import { Placeholder } from "../../../assets/armor_icons";
-import useArmorSetData from "../../../hooks/useArmorSetData";
+import useArmorSetData from "@/hooks/useArmorSetData";
 import { HighlightTitle } from "../styles";
 import { Materials, MaterialsList, Title, Wrapper } from "./styles";
 
