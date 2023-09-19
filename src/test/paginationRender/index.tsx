@@ -2,11 +2,11 @@ import { render, RenderOptions } from "@testing-library/react";
 import * as React from "react";
 import PaginationContext from "../../contexts/pagination";
 
-interface AllProvidersProps {
+interface PaginationProvidersProps {
   children?: React.ReactNode;
 }
 let mockPages = jest.fn();
-const AllProviders = ({ children }: AllProvidersProps) => {
+const PaginationProviders = ({ children }: PaginationProvidersProps) => {
   return (
     <PaginationContext.Provider
       value={{
@@ -28,6 +28,6 @@ const AllProviders = ({ children }: AllProvidersProps) => {
 const paginationRender = (
   ui: React.ReactElement | any,
   options?: RenderOptions
-) => render(ui, { wrapper: AllProviders, ...options });
+) => render(ui, { wrapper: PaginationProviders, ...options });
 
 export { paginationRender };
