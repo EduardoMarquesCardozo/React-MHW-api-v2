@@ -100,7 +100,7 @@ const ArmorInfo = () => {
                     <span>Level {skill.level}</span>
                   </STitle>
                   {skillChecks(
-                    skillList.find((skillArr) => skillArr.id == skill.skill),
+                    skillList?.find((skillArr) => skillArr.id == skill.skill),
                     skill.level
                   )}
                 </article>
@@ -113,15 +113,15 @@ const ArmorInfo = () => {
           <SetBonusSkills>
             <HighlightTitle>SET BONUS SKILLS</HighlightTitle>
             <section>
-              {selectedBonus?.ranks.map(() => (
-                <article>
+              {selectedBonus?.ranks.map((bonus) => (
+                <article key={bonus.skill.id + "-bonus"}>
                   <SetBonusTitle>
-                    <p>Anjanath Power</p>
+                    <p>{selectedBonus.name}</p>
                   </SetBonusTitle>
                   <SetBonusContent>
-                    <p>3</p>
+                    <p>{bonus.pieces}</p>
                     <Icon>►</Icon>
-                    <span>Adrenaline</span>
+                    <span>{bonus.skill.skillName}</span>
                   </SetBonusContent>
                 </article>
               ))}

@@ -9,11 +9,7 @@ export interface Rank {
   id: number;
   skill: number;
   level: number;
-  modifiers: Modifiers;
+  modifiers?: any;
   description: string;
   skillName: string;
-}
-
-export interface Modifiers {
-  damageFire: any;
 }

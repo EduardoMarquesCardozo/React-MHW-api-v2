@@ -50,7 +50,7 @@ export const skillChecks = (
 ) => {
   if (skillData) {
     return (
-      <SContent>
+      <SContent data-testid="skills-value">
         {skillData.ranks.map((rank) => (
           <span key={rank.id}>
             {rank.level <= level ? <FilledCheck /> : <EmptyCheck />}

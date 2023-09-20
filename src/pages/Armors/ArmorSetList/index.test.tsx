@@ -4,8 +4,7 @@ import { armorSetRender } from "@/test/armorSetRender";
 
 describe("Testing ArmorSetList Component", () => {
   it("should render the component with the Tabs and content div", () => {
-    const { container, debug } = armorSetRender(<ArmorSetList />);
-    debug();
+    const { container } = armorSetRender(<ArmorSetList />);
     expect(container.firstChild?.childNodes.length).toBe(2);
   });
   describe("Testing Tabs", () => {

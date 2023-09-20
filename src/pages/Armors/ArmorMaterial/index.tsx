@@ -30,7 +30,7 @@ const ArmorMaterial = () => {
         </Title>
         <MaterialsList>
           {selectedArmor?.crafting.materials.map((material) => (
-            <section>
+            <section key={material.item.id + "-material"}>
               <div>{material.item.name}</div>
               <p>{material.quantity}</p>
             </section>

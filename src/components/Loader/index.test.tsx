@@ -1,12 +1,12 @@
 import SkillContext from "@/contexts/skills";
 import Loader from ".";
-import { skillsRender } from "@/test/skillsRender";
 import { SkillResponse } from "@/models/SkillsResponse";
+import { render } from "@testing-library/react";
 let mock = jest.fn();
 
 describe("Testing Loader Component", () => {
   it("should render the component with a loading spinner", () => {
-    const { container } = skillsRender(
+    const { container } = render(
       <SkillContext.Provider
         value={{
           isLoading: true,
