@@ -1010,12 +1010,3 @@ export const armorSetListDataMock: ArmorSet[] = [
   armorSetDataMock,
   armorSetDataMockOther,
 ];
-
-// export const armorSetListMock = () => {
-//   let i = 1;
-//   armorSetListDataMock.forEach((element) => {
-//     if (element.id != 91) element.id = element.id + i;
-//     i++;
-//   });
-//   return armorSetListDataMock;
-// };

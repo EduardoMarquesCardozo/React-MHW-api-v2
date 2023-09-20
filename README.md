@@ -33,3 +33,7 @@ To run the project follow these steps:
 To run the tests for the project follow these steps:
 
 1. Run the command `yarn test` in the project root.
+
+### Extra information
+
+The links to the icons, API, an others can be found in the main.tsx file as comments.
