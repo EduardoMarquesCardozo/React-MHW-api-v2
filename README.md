@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+# Monster hunter world API Armor sets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## React + TypeScript + Vite + StyledComponent + Axios + Jest + RTL
 
-Currently, two official plugins are available:
+### Application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/EduardoMarquesCardozo/React-MHW-api-v2/assets/79146964/a633eecc-7f1b-4b2c-b12f-8d2c9f9724bf)
+![image](https://github.com/EduardoMarquesCardozo/React-MHW-api-v2/assets/79146964/8408f163-737c-493b-8ab8-b611e0875d02)
+![image](https://github.com/EduardoMarquesCardozo/React-MHW-api-v2/assets/79146964/78d7b03e-c1df-4e66-8c6c-2205cfc32a1c)
 
-## Expanding the ESLint configuration
+## Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before starting make sure you have:
 
-- Configure the top-level `parserOptions` property like this:
+- Do you have one of these OS `Windows / Linux / Mac`?
+- Did you install [`Node`](https://nodejs.org/en/) ?
+- Did you install [`Yarn`](https://yarnpkg.com/) ?
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Setup the project
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To setup the project follow these steps:
+
+1. Clone the github repository: `git clone https://github.com/EduardoMarquesCardozo/React-MHW-api-simple.git`.
+2. In the project root run `yarn` to install the dependencies.
+
+## Runing the project
+
+To run the project follow these steps:
+
+1. Run the command `yarn start` in the project root.
+2. The project will run in the default path `http://localhost:5173/`.
+
+To run the tests for the project follow these steps:
+
+1. Run the command `yarn test` in the project root.
