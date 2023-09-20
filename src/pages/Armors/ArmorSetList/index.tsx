@@ -61,8 +61,8 @@ const ArmorSetList = () => {
           <HighlightTitle className="leftTitle">SETS</HighlightTitle>
           <HighlightTitle>PARTS</HighlightTitle>
         </Title>
-        <Table>
-          {armorSetPage.length > 0 &&
+        <Table data-testid="table">
+          {armorSetPage?.length > 0 &&
             armorSetPage?.map((Armor) => (
               <div key={Armor.id + "-armor"}>
                 <Name>
