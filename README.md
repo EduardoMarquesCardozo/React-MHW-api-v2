@@ -20,7 +20,7 @@ Before starting make sure you have:
 
 To setup the project follow these steps:
 
-1. Clone the github repository: `git clone https://github.com/EduardoMarquesCardozo/React-MHW-api-simple.git`.
+1. Clone the github repository: `git clone https://github.com/EduardoMarquesCardozo/React-MHW-api-v2.git`.
 2. In the project root run `yarn` to install the dependencies.
 
 ## Runing the project
