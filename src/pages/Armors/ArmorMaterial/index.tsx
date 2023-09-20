@@ -15,7 +15,7 @@ const ArmorMaterial = () => {
             ? selectedArmor?.assets.imageMale
             : Placeholder
         }
-        alt=""
+        alt="armor-piece-image"
       />
       <Materials>
         <Title>

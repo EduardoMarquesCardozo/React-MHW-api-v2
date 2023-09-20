@@ -5,7 +5,6 @@ import { SkillResponse } from "@/models/SkillsResponse";
 import { skillListMockData } from "./data";
 import ArmorSetContext from "@/contexts/armorSet";
 import {
-  armorSetDataMock,
   armorSetDataMockOther,
   armorSetListDataMock,
 } from "../armorSetRender/data";
