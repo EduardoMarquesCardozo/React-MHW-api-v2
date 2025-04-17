@@ -27,7 +27,7 @@ To setup the project follow these steps:
 
 To run the project follow these steps:
 
-1. Run the command `yarn start` in the project root.
+1. Run the command `yarn dev` in the project root.
 2. The project will run in the default path `http://localhost:5173/`.
 
 To run the tests for the project follow these steps:
